@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeopleSoft Login</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header img {
+            width: 400px;
+            height: auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+
+        }
+
+        .form-group input {
+            width: 460px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-group input:hover {
+            border-color: #007bff;
+        }
+
+        .form-group select {
+            width: 460px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .form-group select:hover {
+            border-color: #007bff;
+        }
+
+        .form-group button {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .form-group button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="nmu.png" alt="Mansoura University Logo">
+            <h2><span class="form-group" data-lang="en" style="display: none;">New Mansoura University
+                    PeopleSoft</span><span class="form-group" data-lang="ar">New Mansoura University
+                    PeopleSoft</span>
+            </h2>
+            <style>
+                h2 {
+                    font-family: "Segoe UI", Arial, sans-serif;
+                    font-size: 24px;
+                    font-weight: bold;
+                }
+            </style>
+        </div>
+        <form action="error503.html">
+            <div class="form-group">
+                <label for="UserID" data-lang="en" style="display: none;">User ID:</label>
+                <label for="UserID" data-lang="ar">اسم المستخدم:</label>
+                <input type="text" id="UserID" name="UserID" required>
+            </div>
+            <div class="form-group">
+                <label for="PWD" data-lang="en" style="display: none;">Password:</label>
+                <label for="PWD" data-lang="ar">كلمة المرور:</label>
+                <input type="password" id="PWD" name="PWD" required>
+            </div>
+            <div class="form-group">
+                <label for="LANG" data-lang="en" style="display: none;">Select Language:</label>
+                <label for="LANG" data-lang="ar">اختر اللغة:</label>
+                <select id="LANG" name="LANG">
+                    <option value="en">English</option>
+                    <option value="ar" selected>Arabic</option>
+                </select>
+            </div>
+            <input type="hidden" name="APPID" value="NAV">
+            <input type="hidden" name="LOGIN_FLAG" value="1">
+            <div class="form-group">
+                <button type="submit" data-lang="en" style="display: none;">Sign In</button>
+                <button type="submit" data-lang="ar">تسجيل الدخول</button>
+            </div>
+        </form>
+    </div>
+
+    <footer style="text-align: center; margin-top: 50px;">
+        <p>&copy; 2023 New Mansoura University. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission behavior
+
+            // Simulate a delay of 3 seconds before redirecting to the error page
+            setTimeout(function () {
+                window.location.href = 'error503.html';
+            }, 3000);
+        });
+        document.getElementById('LANG').addEventListener('change', function () {
+            var language = this.value;
+            var elements = document.querySelectorAll('[data-lang]');
+            elements.forEach(function (element) {
+                var lang = element.getAttribute('data-lang');
+                if (lang === language) {
+                    element.style.display = 'block';
+                } else {
+                    element.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

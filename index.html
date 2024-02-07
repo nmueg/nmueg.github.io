@@ -14,6 +14,7 @@
         }
 
         .container {
+            width: 90%;
             max-width: 600px;
             margin: 50px auto;
             padding: 20px;
@@ -24,41 +25,22 @@
             align-items: center;
         }
 
-        .header {
-            text-align: center;
-            margin-bottom: 30px;
-        }
-
         .header img {
             width: 400px;
             height: auto;
-        }
-
-        .form-group {
             margin-bottom: 20px;
         }
 
         .form-group label {
             display: block;
             margin-bottom: 5px;
-
+            color: #333;
+            /* Text color */
         }
 
-        .form-group input {
-            width: 460px;
-            padding: 10px;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-
-        .form-group input:hover {
-            border-color: #007bff;
-        }
-
+        .form-group input,
         .form-group select {
-            width: 460px;
+            width: 100%;
             padding: 10px;
             font-size: 16px;
             border: 1px solid #ccc;
@@ -66,8 +48,10 @@
             box-sizing: border-box;
         }
 
+        .form-group input:hover,
         .form-group select:hover {
             border-color: #007bff;
+            /* Border color on hover */
         }
 
         .form-group button {
@@ -84,6 +68,26 @@
 
         .form-group button:hover {
             background-color: #0056b3;
+            /* Button color on hover */
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            /* Footer text color */
+        }
+
+        .footer p {
+            font-size: 12px;
+        }
+
+        /* Media query for screens smaller than 600px (typically mobile devices) */
+        @media screen and (max-width: 600px) {
+            .container {
+                margin: 20px auto;
+                padding: 10px;
+            }
         }
     </style>
 </head>
